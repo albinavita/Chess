@@ -15,7 +15,7 @@ public class Rook  extends ChessPiece {
         if (isBoard(chessBoard, line, column, toLine, toColumn)) {
             if (((line == toLine) && (column != toColumn)) || ((column == toColumn) && (line != toLine))) {
                 if(isObstacleLine(chessBoard, line, column, toLine, toColumn)) {
-                    return (isEndPoint(chessBoard, line, column, toLine, toColumn));
+                    return (isEndPoint(chessBoard, toLine, toColumn));
                 }
             }
         }

@@ -17,7 +17,7 @@ public class Bishop extends ChessPiece {
             if (isMove(line, column, toLine, toColumn)) {
                 if (Math.abs(line - toLine) == Math.abs(column - toColumn)) {
                     if(isObstacleLine(chessBoard, line, column, toLine, toColumn)){
-                        return (isEndPoint(chessBoard, line, column, toLine, toColumn));
+                        return (isEndPoint(chessBoard, toLine, toColumn));
                     }
                 }
             }

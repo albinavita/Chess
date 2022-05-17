@@ -18,7 +18,7 @@ public class Horse extends ChessPiece{
                 if( (Math.abs(line - toLine) == 2 && Math.abs(column - toColumn) == 1) ||
                      Math.abs(column - toColumn) == 2 && Math.abs(line - toLine) == 1){
                     if(isObstacleLine(chessBoard, line, column, toLine, toColumn)){
-                        return (isEndPoint(chessBoard, line, column, toLine, toColumn));
+                        return (isEndPoint(chessBoard, toLine, toColumn));
                     }
                 }
             }

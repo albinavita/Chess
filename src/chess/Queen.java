@@ -15,7 +15,7 @@ public class Queen extends ChessPiece {
         if(isBoard(chessBoard, line, column, toLine, toColumn)) {
            if(isMoveQueen(chessBoard, line, column, toLine, toColumn)){
                if(isObstacleLine(chessBoard, line, column, toLine, toColumn)){
-                   return (isEndPoint(chessBoard, line, column, toLine, toColumn));
+                   return (isEndPoint(chessBoard, toLine, toColumn));
                }
             }
         }

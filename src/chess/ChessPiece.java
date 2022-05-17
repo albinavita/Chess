@@ -26,25 +26,12 @@ public abstract class ChessPiece {
     }
     /**Координата куда идем должна быть пустая
      * или может находиться фигура другого цвета*/
-    protected boolean isEndPoint(ChessBoard chessBoard, int line, int column, int toLine, int toColumn){
+    protected boolean isEndPoint(ChessBoard chessBoard, int toLine, int toColumn){
         return ((chessBoard.board[toLine][toColumn] == null) ||
                 !chessBoard.board[toLine][toColumn].color.equals(this.color));
     }
-    private boolean isBoard1(ChessBoard chessBoard, int line, int column, int toLine, int toColumn){
-        return ( (chessBoard.checkPos(line) && chessBoard.checkPos(column) && chessBoard.checkPos(toLine) && chessBoard.checkPos(toColumn)) &&
-                //ходила ли куда-то фигура
-                (line != toLine && column != toColumn));
-    }
 
-    private boolean isEndPoint(ChessBoard chessBoard, int toLine, int toColumn){
-        return ((chessBoard.board[toLine][toColumn] == null) ||
-		 !chessBoard.board[toLine][toColumn].color.equals(this.color));
-    }
-
-    public boolean isCheck(ChessBoard chessBoard, int line, int column, int toLine, int toColumn){
-        return (isBoard1(chessBoard, line, column, toLine, toColumn) && isEndPoint(chessBoard, toLine, toColumn));
-    }
-    /**Методы для слона и ферзя*/
+    /**Методы для слона и ферзи*/
     protected boolean isDownRight(ChessBoard chessBoard, int line, int column, int toLine, int toColumn){
         int number = 0;
         if((line > toLine) && (column < toColumn)) {
@@ -57,7 +44,7 @@ public abstract class ChessPiece {
         }
         return  false;
     }
-    /**Методы для слона и ферзя*/
+    /**Методы для слона и ферзи*/
     protected boolean isUpLeft(ChessBoard chessBoard, int line, int column, int toLine, int toColumn){
         int number = 0;
         if((line < toLine) && (column > toColumn)) {
@@ -70,7 +57,7 @@ public abstract class ChessPiece {
         }
         return false;
     }
-    /**Методы для слона и ферзя*/
+    /**Методы для слона и ферзи*/
     protected boolean isUpRight(ChessBoard chessBoard, int line, int column, int toLine, int toColumn){
         int number = 0;
         if((line < toLine) && (column < toColumn)) {
@@ -83,7 +70,7 @@ public abstract class ChessPiece {
         }
         return false;
     }
-    /**Методы для слона и ферзя*/
+    /**Методы для слона и ферзи*/
     protected boolean isDownLeft(ChessBoard chessBoard, int line, int column, int toLine, int toColumn){
         int number = 0;
         if((line > toLine) && (column > toColumn)) {

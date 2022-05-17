@@ -58,7 +58,7 @@ public class Pawn extends ChessPiece{
     /**еда*/
     private boolean isMoveEating(ChessBoard chessBoard, int line, int column, int toLine, int toColumn){
         if( (Math.abs(column - toColumn) == 1) && (Math.abs(line - toLine) == 1) ) {
-            return isEndPoint(chessBoard, line, column, toLine, toColumn);
+            return isEndPoint(chessBoard, toLine, toColumn);
         }
         return false;
     }

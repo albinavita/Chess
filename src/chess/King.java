@@ -17,7 +17,7 @@ public class King extends ChessPiece {
         if(isBoard(chessBoard, line, column, toLine, toColumn)) {
             if (Math.abs(line - toLine) > 1 || Math.abs(column - toColumn) > 1) return  false;
                 if ( !isUnderAttack(chessBoard, toLine, toColumn)) {
-                    return isEndPoint(chessBoard, line, column, toLine, toColumn);
+                    return isEndPoint(chessBoard, toLine, toColumn);
                 }
         }
         return  false;
