@@ -4,7 +4,7 @@ public class Queen extends ChessPiece {
     public Queen(String color) {
         super(color);
     }
-
+    // color
     @Override
     public String getColor() {
         return color;
